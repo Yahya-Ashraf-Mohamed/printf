@@ -33,7 +33,7 @@ int buffer(char);
 int _strlen(const char *);
 int _print(char *);
 char *itoa(long int, int);
-int handler(const char *, va_list);
+int helper(const char *, va_list);
 int printsetup(const char *, va_list, int *);
 
 #endif
