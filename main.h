@@ -16,6 +16,7 @@ typedef struct _format
 	int (*f)(va_list);
 } format;
 
+/* printers */
 int _printf(const char *, ...);
 int print_string(va_list);
 int print_char(va_list);
