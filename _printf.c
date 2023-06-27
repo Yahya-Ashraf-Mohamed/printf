@@ -52,9 +52,10 @@ int percent_handler(const char *str, va_list list, int *i)
  **/
 int	helper(t_norm *norm, const char *setup)
 {
-	int i, a;
+	int s, i, a;
 
 	i = -1;
+	s = 0;
 	while (setup[++i])
 	{
 		if (setup[i] == '%' && setup[i + 1] == '\0')
@@ -67,13 +68,13 @@ int	helper(t_norm *norm, const char *setup)
 			a = printsetup(setup, norm->ap, &i);
 			if (a == -1)
 				return (-1);
-			norm->cnt += a;
+			s += a;
 			continue;
 		}
 		_putchar(setup[i]);
-		norm->cnt++;
+		s++;
 	}
-	return (norm->cnt);
+	return (s);
 }
 /**
  * _printf - Produces output according to a format
@@ -86,9 +87,14 @@ int	_printf(const char *format, ...)
 {
 	t_norm	norm;
 
+	if (format == NULL)
+		return (-1);
+	norm.cnt = _strlen(format);
+	if (size <= 0)
+		return (0);
 	va_start(norm.ap, format);
-	norm.cnt = 0;
 	norm.cnt = helper(&norm, format);
+	_putchar(-1);
 	va_end(norm.ap);
 	return (norm.cnt);
 }
