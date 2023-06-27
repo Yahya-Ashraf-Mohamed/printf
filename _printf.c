@@ -21,16 +21,13 @@ int percent_handler(const char *str, va_list list, int *i)
 	};
 
 	*i += 1;
-
 	if (str[*i] == '\0')
 		return (-1);
-
 	if (str[*i] == '%')
 	{
 		_putchar('%');
 		return (1);
 	}
-
 	nf = sizeof(setup) / sizeof(setup[0]);
 	while (++j < nf)
 	{
@@ -50,7 +47,7 @@ int percent_handler(const char *str, va_list list, int *i)
  * @norm: stucture of arguments
  * Return: Total size of arguments with the total size of the base string
  **/
-int	helper(t_norm *norm, const char *setup)
+int	helper(const char *setup, va_list list)
 {
 	int s, i, a;
 
@@ -65,7 +62,7 @@ int	helper(t_norm *norm, const char *setup)
 		}
 		if (setup[i] == '%')
 		{
-			a = printsetup(setup, norm->ap, &i);
+			a = printsetup(setup, list, &i);
 			if (a == -1)
 				return (-1);
 			s += a;
@@ -85,16 +82,17 @@ int	helper(t_norm *norm, const char *setup)
  **/
 int	_printf(const char *format, ...)
 {
-	t_norm	norm;
+	int s;
+	va_list as;
 
 	if (format == NULL)
 		return (-1);
-	norm.cnt = _strlen(format);
-	if (size <= 0)
+	s = _strlen(format);
+	if (s <= 0)
 		return (0);
-	va_start(norm.ap, format);
-	norm.cnt = helper(&norm, format);
+	va_start(as, format);
+	s = helper(format, as);
 	_putchar(-1);
-	va_end(norm.ap);
-	return (norm.cnt);
+	va_end(as);
+	return (s);
 }

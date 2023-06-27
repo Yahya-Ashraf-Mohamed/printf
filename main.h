@@ -16,12 +16,6 @@ typedef struct _format
 	int (*f)(va_list);
 } format;
 
-typedef struct s_norm
-{
-	va_list	ap;
-	int		cnt;
-}	t_norm;
-
 int _printf(const char *, ...);
 int print_string(va_list);
 int print_char(va_list);
@@ -39,7 +33,7 @@ int buffer(char);
 int _strlen(const char *);
 int _print(char *);
 char *itoa(long int, int);
-int helper(t_norm *, const char *);
+int handler(const char *, va_list);
 int percent_handler(const char *, va_list, int *);
 
 #endif
