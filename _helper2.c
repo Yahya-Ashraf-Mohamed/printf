@@ -10,7 +10,7 @@ char *string_to_upper(char *s)
 
 	while (s[++i] != '\0')
 	{
-		if (c >= 'a' && c <= 'z')
+		if (s[i] >= 'a' && s[i] <= 'z')
 			s[i] = s[i] - 32;
 	}
 	return (s);
