@@ -46,12 +46,10 @@ char *itoa(long int num, int base)
 	}
 	p = &buff[49];
 	*p = '\0';
-
 	do      {
 		*--p = arr[nb % base];
 		nb /= base;
 	} while (nb != 0);
-
 	if (s)
 		*--p = s;
 	return (p);

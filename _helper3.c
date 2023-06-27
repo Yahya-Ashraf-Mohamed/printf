@@ -1,3 +1,4 @@
+#include "main.h"
 /**
  * rot13 - Encodes a string using rot13.
  * @s: String to enconde
@@ -51,7 +52,7 @@ int print_string(va_list list)
 	int pl;
 
 	p = va_arg(list, char*);
-	pl = print((p != NULL) ? p : "(null)");
+	pl = _print((p != NULL) ? p : "(null)");
 	return (pl);
 }
 /**
@@ -65,6 +66,6 @@ int print_unsigned(va_list list)
 	int s;
 
 	pb = itoa(va_arg(list, unsigned int), 10);
-	s = print((pb != NULL) ? pb : "NULL");
+	s = _print((pb != NULL) ? pb : "NULL");
 	return (s);
 }

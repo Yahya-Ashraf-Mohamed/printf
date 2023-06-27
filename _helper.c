@@ -10,7 +10,7 @@ int print_binary(va_list list)
 	int s;
 
 	pb = itoa(va_arg(list, unsigned int), 2);
-	s = print(pb);
+	s = _print(pb);
 	return (s);
 }
 /**
@@ -37,7 +37,7 @@ int print_hexadecimal_low(va_list list)
 	int s;
 
 	pb = itoa(va_arg(list, unsigned int), 16);
-	s = print((pb != NULL) ? pb : "NULL");
+	s = _print((pb != NULL) ? pb : "NULL");
 	return (s);
 }
 /**
@@ -51,7 +51,7 @@ int print_integer(va_list list)
 	int s;
 
 	pb = itoa(va_arg(list, int), 10);
-	s = print((pb != NULL) ? pb : "NULL");
+	s = _print((pb != NULL) ? pb : "NULL");
 	return (s);
 }
 /**
@@ -65,7 +65,7 @@ int print_octal(va_list list)
 	int s;
 
 	pb = itoa(va_arg(list, unsigned int), 8);
-	s = print((pb != NULL) ? pb : "NULL");
+	s = _print((pb != NULL) ? pb : "NULL");
 	return (s);
 }
 

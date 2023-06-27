@@ -27,7 +27,7 @@ int print_hexadecimal_upp(va_list list)
 
 	pb = itoa(va_arg(list, unsigned int), 16);
 	pb = string_to_upper(pb);
-	s = print((pb != NULL) ? pb : "NULL");
+	s = _print((pb != NULL) ? pb : "NULL");
 	return (s);
 }
 /**
@@ -79,7 +79,7 @@ int  print_rev_string(va_list list)
 	const char *str;
 
 	str = va_arg(list, const char *);
-	size = _strlen(str);
+	s = _strlen(str);
 	i = s;
 	while (--i >= 0)
 		_putchar(str[i]);
