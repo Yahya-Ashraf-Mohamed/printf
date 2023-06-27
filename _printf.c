@@ -1,12 +1,12 @@
 #include "main.h"
 /**
- * percent_handler - Controller for percent format
+ * printsetup - Controller for percent format
  * @str: String format
  * @list: List of arguments
  * @i: Iterator
  * Return: Size of the numbers of elements printed
  **/
-int percent_handler(const char *str, va_list list, int *i)
+int printsetup(const char *str, va_list list, int *i)
 {
 	int s, j, nf;
 	j = -1;
