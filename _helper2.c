@@ -60,7 +60,7 @@ int print_pointer(va_list list)
 
 	pb = itoa(va_arg(list, unsigned long int), 16);
 	if (!_strcmp(pb, "0"))
-		return (print("(nil)"));
+		return (_print("(nil)"));
 	s = _print("0x");
 	if (!_strcmp(pb, "-1"))
 		s += _print("ffffffffffffffff");
