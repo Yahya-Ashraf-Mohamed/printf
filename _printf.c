@@ -11,7 +11,8 @@ int printsetup(const char *str, va_list list, int *i)
 	int s, j, nf;
 	j = -1;
 	s = 0;
-	format setup[] = {
+	format setup[];
+        setup[]	= {
 		{'s', print_string}, {'c', print_char},
 		{'d', print_integer}, {'i', print_integer},
 		{'b', print_binary}, {'u', print_unsigned},
@@ -19,7 +20,6 @@ int printsetup(const char *str, va_list list, int *i)
 		{'X', print_hexadecimal_upp}, {'p', print_pointer},
 		{'r', print_rev_string}, {'R', print_rot}
 	};
-
 	*i += 1;
 	if (str[*i] == '\0')
 		return (-1);
