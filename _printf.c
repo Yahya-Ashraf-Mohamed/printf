@@ -11,7 +11,7 @@ int printsetup(const char *str, va_list list, int *i)
 	int s, j, nf;
 	j = -1;
 	s = 0;
-	format setup[] = {
+	format setup[12] = {
 		{'s', print_string}, {'c', print_char},
 		{'d', print_integer}, {'i', print_integer},
 		{'b', print_binary}, {'u', print_unsigned},

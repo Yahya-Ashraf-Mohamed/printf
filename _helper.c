@@ -23,7 +23,7 @@ int print_char(va_list list)
 	int a;
 
 	a = va_arg(list, int);
-	_putchar(aux);
+	_putchar(a);
 	return (1);
 }
 /**
